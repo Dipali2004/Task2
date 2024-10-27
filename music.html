@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        .box{
+            /* border: 2px solid black; */
+            width: 10%;
+            height: 50px;
+            display: inline-block;
+        }
+        img{
+            height: 50px ;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> 
+        <a href="#" onclick="playMusic()">
+            <img src="https://cdn-icons-png.flaticon.com/128/3318/3318703.png" alt="Play Icon">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" onclick="togglePlayPause()" id="playPauseLink">
+            <img id="playPauseIcon" src="https://cdn-icons-png.flaticon.com/128/4211/4211362.png" alt="Pause Icon">
+        </a>
+    </div>
+    <div class="box">
+        <a href="#" onclick="nextTrack()">
+            <img src="https://cdn-icons-png.flaticon.com/128/3318/3318722.png" alt="Next Track Icon">
+        </a>
+    </div>
+
+    <script>
+        let isPlaying = true; // Flag to track play/pause state
+
+        function togglePlayPause() {
+            const playPauseIcon = document.getElementById('playPauseIcon');
+            
+            if (isPlaying) {
+                // Change to play icon when music is paused
+                playPauseIcon.src = "https://cdn-icons-png.flaticon.com/128/4211/4211379.png"; 
+                playPauseIcon.alt = "Play Icon";
+                console.log("Music paused");
+            } else {
+                // Change to pause icon when music is playing
+                playPauseIcon.src = "https://cdn-icons-png.flaticon.com/128/4211/4211362.png";
+                playPauseIcon.alt = "Pause Icon";
+                console.log("Music playing");
+            }
+            
+            isPlaying = !isPlaying; // Toggle state
+        }
+
+        function playMusic() {
+            console.log("Playing music");
+        }
+
+        function nextTrack() {
+            console.log("Next track");
+        }
+    </script>
+    
+</body>
+</html>
